@@ -1,0 +1,110 @@
+:root {
+  --blue: #3a98b9;
+  --div: #fff1dc;
+  --background: #e8d5c4;
+}
+button {
+  all: unset;
+  cursor: pointer;
+}
+html,
+body {
+  height: 100%;
+  padding: 0%;
+  margin: 0;
+  background-color: var(--background);
+  font-family: Avenir, "Avenir Next LT Pro", Montserrat, Corbel, "URW Gothic",
+    source-sans-pro, sans-serif;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+.titlecontainer {
+  padding: 10px;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--blue);
+  flex-wrap: wrap;
+  align-items: center;
+}
+#add {
+  border: none;
+  color: #fff1dc;
+  background-color: #2d7792;
+  padding: 0;
+  font-size: 100px;
+  height: 60px;
+  padding-bottom: 12px;
+  line-height: 20px;
+}
+div p {
+  color: #fff1dc;
+  font-size: 30px;
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+.divbar {
+  height: 12px;
+  background-color: var(--div);
+}
+
+#modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.modal-content {
+  background-color: var(--div);
+  margin: 15% auto; /* 15% from the top and centered */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(70vw, 500px);
+  padding: 40px 0px;
+  border-radius: 10px;
+}
+
+#createbtn,
+#returnbtn {
+  background-color: var(--blue);
+  color: var(--div);
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: 7px;
+}
+#createbtn:hover,
+#returnbtn:hover {
+  background-color: #29728d;
+}
+#book-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  grid-template-rows: repeat(auto-fit, 170px);
+  justify-content: center;
+  justify-items: center;
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+  grid-gap: 10px;
+  width: 75vw;
+  align-self: center;
+}
+#book {
+  padding-top: 10px;
+  border-radius: 5px;
+  width: 200px;
+  height: 150px;
+  background-color: var(--div);
+  text-align: center;
+  line-height: 25px;
+  white-space: pre-line;
+}
