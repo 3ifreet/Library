@@ -31,14 +31,6 @@ body {
   align-items: center;
 }
 #add {
-  border: none;
-  color: #fff1dc;
-  background-color: #2d7792;
-  padding: 0;
-  font-size: 100px;
-  height: 60px;
-  padding-bottom: 12px;
-  line-height: 20px;
 }
 div p {
   color: #fff1dc;
@@ -63,7 +55,7 @@ div p {
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 .modal-content {
-  background-color: var(--div);
+  background-color: var(--background);
   margin: 15% auto; /* 15% from the top and centered */
   display: flex;
   flex-direction: column;
@@ -75,15 +67,15 @@ div p {
 
 #createbtn,
 #returnbtn {
-  background-color: var(--blue);
-  color: var(--div);
+  background-color: #42acd3;
+  color: black;
   padding: 10px 20px;
   margin: 10px 0;
   border-radius: 7px;
 }
 #createbtn:hover,
 #returnbtn:hover {
-  background-color: #29728d;
+  background-color: var(--blue);
 }
 #book-container {
   display: grid;
