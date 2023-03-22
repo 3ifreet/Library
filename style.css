@@ -1,7 +1,10 @@
 :root {
   --blue: #3a98b9;
-  --div: #fff1dc;
-  --background: #e8d5c4;
+  --blue: #36846b;
+  --blue: #35327a;
+  --div: #a3816a;
+
+  --background: #eeeeee;
 }
 button {
   all: unset;
@@ -33,13 +36,14 @@ body {
 #add {
 }
 div p {
-  color: #fff1dc;
+  color: var(--background);
   font-size: 30px;
   font-family: "Helvetica", "Arial", sans-serif;
 }
 .divbar {
   height: 12px;
   background-color: var(--div);
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
 }
 
 #modal {
@@ -77,7 +81,7 @@ div p {
 #returnbtn:hover {
   background-color: var(--blue);
 }
-#book-container {
+/*#book-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, 200px);
   grid-template-rows: repeat(auto-fit, 170px);
@@ -89,8 +93,14 @@ div p {
   grid-gap: 10px;
   width: 75vw;
   align-self: center;
+}*/
+#book-container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 75vw;
 }
-#bookcard {
+/*#bookcard {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -102,11 +112,25 @@ div p {
   text-align: center;
   line-height: 25px;
   white-space: pre-line;
+}*/
+#bookcard {
+  display: grid;
+  grid-template-columns: 40% 40% 20%;
+
+  background-color: #f5f5f5;
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+  font-size: 120%;
+  margin-top: 6px;
 }
 #removebtn {
-  background-color: #ff0000;
-  border-radius: 5px;
+  background-color: #cf3030;
+  height: 40px;
+  text-align: center;
+  color: #f5f5f5;
 }
 #removebtn:hover {
   background-color: rgb(233, 0, 0);
+}
+#bookname {
+  word-wrap: break-word;
 }

@@ -61,7 +61,7 @@ function createbookcard(obj) {
   let $bookname = document.getElementById("bookname");
   let $bookpages = document.getElementById("pages");
   $bookname.textContent = obj.name;
-  $bookpages.textContent = obj.pages;
+  $bookpages.textContent = `${obj.pages} pages`;
   let removebtn = document.createElement("button");
   removebtn.setAttribute("id", "removebtn");
   removebtn.textContent = "remove";
