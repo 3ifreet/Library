@@ -13,37 +13,63 @@ modal.addEventListener("click", function (e) {
     closemodal();
   }
 });
+function closemodal() {
+  modal.style.display = "none";
+}
 /*creating books */
 let $createbtn = document.getElementById("createbtn");
-let myLibrary = [];
+let myLibrary = [{ name: "hello", pages: "23" }];
 let $bookcontainer = document.getElementById("book-container");
-
 $createbtn.addEventListener("click", () => {
+  $bookcontainer.textContent = "";
   addBookToLibrary();
-  render();
+  render2();
   clearfields();
 });
 function Book(bookname, pages, isread) {
   this.name = bookname;
   this.pages = pages;
 }
+
 function addBookToLibrary() {
-  let name = document.getElementById("book-name").value;
-  let pages = document.getElementById("book-pages").value;
+  let name = document.getElementById("booknameform").value;
+  let pages = document.getElementById("bookpagesform").value;
   let book = new Book(name, pages);
   myLibrary.unshift(book);
 }
 function clearfields() {
-  document.getElementById("book-name").value = "";
-  document.getElementById("book-pages").value = "";
+  document.getElementById("booknameform").value = "";
+  document.getElementById("bookpagesform").value = "";
   closemodal();
-}
-function render() {
-  const bookhtml = `<div id='book'><div>`;
-  $bookcontainer.insertAdjacentHTML("afterbegin", bookhtml);
-  let $bookclass = document.getElementById("book");
-  $bookclass.textContent = `${myLibrary[0].name}\r\n${myLibrary[0].pages}`;
 }
 function closemodal() {
   modal.style.display = "none";
 }
+function render2() {
+  myLibrary.map((obj) => {
+    createbookcard(obj);
+  });
+}
+
+function createbookcard(obj) {
+  const bookhtml = `<div id='bookcard'>
+  <div id='bookname'></div>
+  <div id='pages'></div>
+  </div>`;
+  $bookcontainer.insertAdjacentHTML("afterbegin", bookhtml);
+  let $bookcard = document.getElementById("bookcard");
+  let $bookname = document.getElementById("bookname");
+  let $bookpages = document.getElementById("pages");
+  $bookname.textContent = obj.name;
+  $bookpages.textContent = obj.pages;
+  let removebtn = document.createElement("button");
+  removebtn.setAttribute("id", "removebtn");
+  removebtn.textContent = "remove";
+  $bookcard.append(removebtn);
+  removebtn.addEventListener("click", () => {
+    $bookcard.remove();
+    let index = myLibrary.indexOf(obj);
+    myLibrary.splice(index, index + 1);
+  });
+}
+render2();

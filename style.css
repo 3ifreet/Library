@@ -90,7 +90,10 @@ div p {
   width: 75vw;
   align-self: center;
 }
-#book {
+#bookcard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding-top: 10px;
   border-radius: 5px;
   width: 200px;
@@ -99,4 +102,11 @@ div p {
   text-align: center;
   line-height: 25px;
   white-space: pre-line;
+}
+#removebtn {
+  background-color: #ff0000;
+  border-radius: 5px;
+}
+#removebtn:hover {
+  background-color: rgb(233, 0, 0);
 }
